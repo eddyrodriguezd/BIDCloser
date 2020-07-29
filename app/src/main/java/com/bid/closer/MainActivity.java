@@ -10,20 +10,43 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private int imgMostrada = 0;
+    private ImageView mapImg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageButton buttonRestaurant = findViewById(R.id.buttonRestaurant);
+        mapImg = findViewById(R.id.map);
 
-        buttonRestaurant.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.buttonRestaurant).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Pulsaste restaurantes", Toast.LENGTH_SHORT).show();
-                ImageView mapImg = findViewById(R.id.map);
                 mapImg.setImageResource(R.drawable.mapa_restaurantes);
+                imgMostrada = 1;
             }
         });
+
+        findViewById(R.id.buttonPark).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mapImg.setImageResource(R.drawable.mapa_parques);
+                imgMostrada = 2;
+            }
+        });
+
+        mapImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(imgMostrada == 1) {
+                    mapImg.setImageResource(R.drawable.mapa_restaurantes_llamada);
+                }
+                else if (imgMostrada == 2) {
+                    mapImg.setImageResource(R.drawable.mapa_parques_llamada);
+                }
+            }
+        });
+
     }
 }

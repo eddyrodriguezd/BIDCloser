@@ -7,14 +7,15 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/filledTextField"
+        android:id="@+id/textInputLayoutSearch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="12dp"
+        android:hint="Ingresa una dirección aquí"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -36,15 +37,94 @@
         app:srcCompat="@drawable/mapa_original" />
 
     <ImageButton
+        android:id="@+id/buttonBank"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/circle"
+        android:padding="6dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonRestaurant"
+        app:layout_constraintStart_toEndOf="@+id/buttonSupermarket"
+        app:layout_constraintTop_toTopOf="@+id/buttonRestaurant"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/billetes" />
+
+    <ImageButton
+        android:id="@+id/buttonMarket"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/circle"
+        android:padding="6dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonRestaurant"
+        app:layout_constraintStart_toEndOf="@+id/buttonBank"
+        app:layout_constraintTop_toTopOf="@+id/buttonRestaurant"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/bolsa_papel_verduras" />
+
+    <ImageButton
+        android:id="@+id/buttonPark"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/circle"
+        android:padding="6dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonRestaurant"
+        app:layout_constraintStart_toEndOf="@+id/buttonMarket"
+        app:layout_constraintTop_toTopOf="@+id/buttonRestaurant"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/parque" />
+
+    <ImageButton
         android:id="@+id/buttonRestaurant"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/circle"
+        android:padding="6dp"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filledTextField"
-        app:srcCompat="@drawable/restaurante" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutSearch"
+        app:srcCompat="@drawable/restaurante_v2" />
+
+    <ImageButton
+        android:id="@+id/buttonSupermarket"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/circle"
+        android:padding="4dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonRestaurant"
+        app:layout_constraintStart_toEndOf="@+id/buttonRestaurant"
+        app:layout_constraintTop_toTopOf="@+id/buttonRestaurant"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/basket" />
+
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutSearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textInputLayoutSearch"
+        app:srcCompat="@android:drawable/ic_menu_search" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_mylocation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
