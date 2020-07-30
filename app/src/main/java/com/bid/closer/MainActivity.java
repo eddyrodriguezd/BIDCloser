@@ -8,6 +8,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bid.closer.dialogs.PreventionDialog;
+
 public class MainActivity extends AppCompatActivity {
 
     private int imgMostrada = 0;
@@ -17,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        PreventionDialog preventionDialog = new PreventionDialog(this);
+        preventionDialog.startDialog();
 
         mapImg = findViewById(R.id.map);
 
